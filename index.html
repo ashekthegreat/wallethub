@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>WalletHub Test</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+
+    <script src="assets/js/jquery-2.1.4.min.js"></script>
+    <script src="assets/js/underscore-min.js"></script>
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-ui-router.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/controllers/page1.controller.js"></script>
+    <script src="app/controllers/page2.controller.js"></script>
+    <script src="app/controllers/page3.controller.js"></script>
+
+    <script src="app/services/common.service.js"></script>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">WalletHub</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="page({id: 1})">Page 1</a></li>
+                    <li><a ui-sref="page({id: 2})">Page 2</a></li>
+                    <li><a ui-sref="page({id: 3})">Page 3</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section ui-view></section>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<div class="container" role="main">
+    <a class="floated-action" href="javascript:;" title="Create New User" ng-click="addUser()" class="button pull-right">+</a>
+    <div class="users">
+        <div class="table">
+            <div class="thead">
+                <div class="tr">
+                    <div>Name</div>
+                    <div>Email</div>
+                    <div>Type</div>
+                    <div>Note</div>
+                    <div class="td-actions">Actions</div>
+                </div>
+            </div>
+            <div class="tbody">
+                <div class="tr" ng-repeat="user in users">
+                    <div>{{user.name}}</div>
+                    <div>{{user.email}}</div>
+                    <div>
+                        {{user.type | uppercase}}
+                    </div>
+                    <div>{{user.note}}</div>
+                    <div class="td-actions">
+                        <a href="javascript:;" title="Delete" ng-click="deleteUser(user)"><i class="fa fa-close text-danger"></i></a>
+                        <a href="javascript:;" title="Edit" ng-click="editUser(user)"><i class="fa fa-pencil"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div> <!-- /container -->
