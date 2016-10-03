@@ -1,3 +1,52 @@
 <div class="container" role="main">
     <h1>Page 1</h1>
-</div> <!-- /container -->
+
+    <!-- Solution to Q2 -->
+    <div class="well">
+        <h3>Q2. Sharing data between pages</h3>
+        <p>Lets share data with <a ui-sref="page({id: 2})">Page 2</a> and <a ui-sref="page({id: 3})">Page 3</a></p>
+        <input type="text" ng-model="commonService.sharedValue"><br>
+        You typed: {{commonService.sharedValue}}
+    </div>
+
+    <!-- Solution to Q5 -->
+    <div class="well">
+        <h3>Q5. Phone formatter</h3>
+        <p>Input number to format it as phone number like: (541) 754-3010</p>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="phone">Input phone number</label>
+                    <input type="text" class="form-control" id="phone" ng-model="phoneNumber" phone-formatter>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label>Model value</label>
+                    <input class="form-control" id="phoneNumber" ng-model="phoneNumber" disabled>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Solution to Q6 -->
+    <div class="well">
+        <h3>Q6. Currency formatter</h3>
+        <p>Input number and it will be formatted to currency:</p>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="currency">Input amount</label>
+                    <input type="text" class="form-control" id="currency" ng-model="currencyAmount" currency-formatter>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label>Model value</label>
+                    <input class="form-control" id="currencyAmount" ng-model="currencyAmount" disabled>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

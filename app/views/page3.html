@@ -1,3 +1,9 @@
 <div class="container" role="main">
     <h1>Page 3</h1>
-</div> <!-- /container -->
+
+    <div class="well">
+        <h3>Q2. Sharing data between pages</h3>
+        <p>Showing data from <a ui-sref="page({id: 1})">Page 1</a></p>
+        You typed: {{commonService.sharedValue}}
+    </div>
+</div>

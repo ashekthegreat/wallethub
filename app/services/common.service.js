@@ -1,12 +1,18 @@
+
+
 (function () {
     angular.module("app")
-        .factory("CommonFactory", CommonFactory);
+        .config(['$provide', function($provide) {
+            $provide.factory("CommonService", CommonService);
+        }]);
 
-    CommonFactory.$inject = ["$http", "$q", "$window"];
+    CommonService.$inject = ["$http", "$q", "$window"];
 
-    function CommonFactory($http, $q, $window) {
-        var factory = {};
+    function CommonService($http, $q, $window) {
+        var service = {};
 
-        return factory;
+        service.sharedValue;
+
+        return service;
     }
 }());

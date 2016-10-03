@@ -1,5 +1,5 @@
 (function () {
-    angular.module("app", ['ui.router']);
+    angular.module("app", ['ui.router', 'ngAnimate']);
         
 	//$stateprovider is the service provided by ui.router
     angular.module("app")
