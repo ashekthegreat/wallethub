@@ -2,6 +2,7 @@ body {
     padding-top: 51px;
     color: #373737;
     overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .navbar-inverse .navbar-brand {

@@ -6,4 +6,54 @@
         <p>Showing data from <a ui-sref="page({id: 1})">Page 1</a>. Same value is also available at <a ui-sref="page({id: 3})">Page 3</a></p>
         You typed: {{commonService.sharedValue}}
     </div>
-</div> <!-- /container -->
+
+    <div class="well">
+        <h3>Q4. Search and filter on data</h3>
+        <p>Searching and filtering on list of items</p>
+
+        <form class="">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="name-filter">Filter names</label>
+                        <input type="text" class="form-control" id="name-filter" ng-model="search.name">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label>Sort by</label>
+                        <div>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="age-sort" name="sortBy" value="age" ng-model="sortBy[0]" ng-true-value="'age'" ng-false-value="''"> Age
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="company-sort" name="sortBy" value="company" ng-model="sortBy[1]" ng-true-value="'company'" ng-false-value="''"> Company
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <table class="table table-bordered" style="background: #fff">
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Company</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in items | filter:search | orderBy: sortBy[1] | orderBy: sortBy[0]" >
+                    <td>{{$index+1}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.age}}</td>
+                    <td>{{item.company}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
