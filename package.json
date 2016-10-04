@@ -1,0 +1,15 @@
+{
+  "name": "wallethub",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A walletHub test project with AngularJS",
+  "repository": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000 -c-1 ./"
+  }
+}

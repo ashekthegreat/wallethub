@@ -10,7 +10,6 @@
                 .state('page', {
                     url: '/:id',
                     templateUrl: function ($stateParams) {
-                        console.log($stateParams);
                         return 'app/views/page' + $stateParams.id + '.html';
                     },
                     controllerProvider: function ($stateParams) {

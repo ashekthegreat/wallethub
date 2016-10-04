@@ -12,10 +12,6 @@
         };
         $scope.sortBy = [];
 
-        setInterval(function () {
-            console.log($scope.sortBy);
-        }, 1000);
-
         $scope.items = [
             {
                 "name": "Scott Hendrix",
