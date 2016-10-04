@@ -1,5 +1,11 @@
 <div class="container" role="main">
-    <h1>Page 1</h1>
+    <h1>Page 1 - all solutions</h1>
+
+    <!-- Solution to Q1 -->
+    <div class="well">
+        <h3>Q1. Single state for 3 pages</h3>
+        <p>All three pages, <a ui-sref="page({id: 1})">Page 1</a>, <a ui-sref="page({id: 2})">Page 2</a> and <a ui-sref="page({id: 3})">Page 3</a> share a single state. Controller and views are being selected on demand.</p>
+    </div>
 
     <!-- Solution to Q2 -->
     <div class="well">
@@ -7,6 +13,18 @@
         <p>Lets share data with <a ui-sref="page({id: 2})">Page 2</a> and <a ui-sref="page({id: 3})">Page 3</a></p>
         <input type="text" ng-model="commonService.sharedValue"><br>
         You typed: {{commonService.sharedValue}}
+    </div>
+
+    <!-- Solution to Q3 -->
+    <div class="well">
+        <h3>Q3. Have page transition animations.</h3>
+        <p>Switch between pages to see animation.</p>
+    </div>
+
+    <!-- Solution to Q4 -->
+    <div class="well">
+        <h3>Q4. Array filter and sort.</h3>
+        <em>Solution is presented at <a ui-sref="page({id: 2})">Page 2 >></a></em>
     </div>
 
     <!-- Solution to Q5 -->

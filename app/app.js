@@ -8,7 +8,7 @@
             //create route object
             $stateProvider
                 .state('page', {
-                    url: '/:id',
+                    url: '/{id:[1-3]}',
                     templateUrl: function ($stateParams) {
                         return 'app/views/page' + $stateParams.id + '.html';
                     },
