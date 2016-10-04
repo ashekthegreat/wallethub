@@ -15,18 +15,61 @@
         $scope.currencyAmount;
 
         // Q7: input values
+        $scope.inputValues = [
+            {
+                value: 100
+            }, {
+                value: 100
+            }, {
+                value: 100
+            }
+        ];
+        var inputValuesCount = $scope.inputValues.length;
 
-        $scope.inputValues = {
-            input1: 100,
-            input2: 100,
-            input3: 100,
-            sum: ""
-        };
-        $scope.sumInputs = function(){
-            var inp = $scope.inputValues;
-            inp.sum = inp.input1 + inp.input2 + inp.input3;
-            console.log(inp.sum);
+        // 2 variables for sum, to compare when changed
+        $scope.sumOriginal = 0;
+        $scope.sumCurrent = 0;
+
+        // sum all inputs
+        $scope.sumInputs = function () {
+            $scope.sumCurrent = 0;
+
+            // since array map and reduce is not supported by IE9 or less, lets stick to for loop instead
+            for (var i = 0; i < inputValuesCount; i++) {
+                $scope.sumCurrent += $scope.inputValues[i].value;
+            }
+            $scope.sumOriginal = $scope.sumCurrent;
         };
         $scope.sumInputs();
+
+        // distribute the change of sum across 3 inputs
+        $scope.distributeSum = function () {
+            var newValue = $scope.sumCurrent;
+            var oldValue = $scope.sumOriginal;
+
+            if (newValue == oldValue) {
+                return;
+            }
+
+            var delta = newValue - oldValue;
+            var absSum = 0;
+            for (var i = 0; i < inputValuesCount; i++) {
+                absSum += Math.abs($scope.inputValues[i].value);
+            }
+
+            // if all 3 are 0, distribute equally
+            if (absSum == 0) {
+                for (i = 0; i < inputValuesCount; i++) {
+                    $scope.inputValues[i].value += delta / inputValuesCount;
+                }
+            } else {
+                for (i = 0; i < inputValuesCount; i++) {
+                    $scope.inputValues[i].value = $scope.inputValues[i].value + (Math.abs($scope.inputValues[i].value) * delta / absSum);
+                }
+            }
+
+            // save sum to original
+            $scope.sumOriginal = $scope.sumCurrent;
+        };
     }
 }());

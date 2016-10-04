@@ -12,7 +12,7 @@
         };
         $scope.sortBy = [];
 
-        setInterval(function(){
+        setInterval(function () {
             console.log($scope.sortBy);
         }, 1000);
 

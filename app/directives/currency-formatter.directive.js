@@ -2,7 +2,7 @@
     angular.module("app")
         .directive('currencyFormatter', function () {
             function convertToCurrency(x) {
-                if(!x){
+                if (!x) {
                     return "";
                 }
                 var parts = x.toString().split(".");

@@ -49,34 +49,39 @@
         </div>
     </div>
 
-    <!-- Solution to Q6 -->
+    <!-- Solution to Q7 -->
     <div class="well">
         <h3>Q7. Sum and distribution</h3>
         <p>Sum 3 inputs to 4th field and distribute 4th to 3 input fields</p>
         <div class="row">
-            <div class="col-xs-12 col-md-3">
+            <div class="col-xs-12 col-md-3" ng-repeat="input in inputValues track by $index">
                 <div class="form-group">
-                    <label for="input1">Input #1</label>
-                    <input type="number" class="form-control" id="input1" ng-model="inputValues.input1" ng-change="sumInputs()">
+                    <label for="input{{$index+1}}">Input #{{$index+1}}</label>
+                    <input type="number" class="form-control" id="input{{$index+1}}" ng-model="input.value" ng-change="sumInputs()">
                 </div>
             </div>
             <div class="col-xs-12 col-md-3">
                 <div class="form-group">
-                    <label for="input2">Input #2</label>
-                    <input type="number" class="form-control" id="input2" ng-model="inputValues.input2" ng-change="sumInputs()">
+                    <label for="input-sum">Sum</label>
+                    <input type="number" class="form-control" id="input-sum" ng-model="sumCurrent" ng-change="distributeSum()" ng-model-options="{ debounce: 600 }">
                 </div>
             </div>
-            <div class="col-xs-12 col-md-3">
-                <div class="form-group">
-                    <label for="input3">Input #3</label>
-                    <input type="number" class="form-control" id="input3" ng-model="inputValues.input3" ng-change="sumInputs()">
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-3">
-                <div class="form-group">
-                    <label for="input4">Sum</label>
-                    <input type="number" class="form-control" id="input4" ng-model="inputValues.sum">
-                </div>
+        </div>
+    </div>
+
+    <!-- Solution to Q8 -->
+    <div class="well">
+        <h3>Q8. Jump focus on max/min length</h3>
+        <p>Create 3 inputs each with maximum char. length 5. When entering the 5th char. in an input the
+            cursor should jump to the next input right after the char. has been inserted. When deleting the 1st
+            char. of an input the cursor should jump at the end of previous input right after that char. has
+            been deleted.
+        </p>
+        <div class="form-inline q8">
+            <div class="form-group" jump-focus>
+                <input type="text" maxlength="5" class="form-control">
+                <input type="text" maxlength="5" class="form-control">
+                <input type="text" maxlength="5" class="form-control">
             </div>
         </div>
     </div>

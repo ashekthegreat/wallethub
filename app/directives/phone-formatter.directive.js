@@ -2,14 +2,14 @@
     angular.module("app")
         .directive('phoneFormatter', function () {
             function convertToPhone(x) {
-                if(!x){
+                if (!x) {
                     return "";
                 }
 
                 var number = x.replace(/[^\d]/g, '');
                 if (number.length > 3 && number.length < 7) {
                     number = number.replace(/(\d{3})(\d{4})?/, "($1) $2");
-                } else if (number.length >=7) {
+                } else if (number.length >= 7) {
                     number = number.replace(/(\d{3})(\d{3})(\d{4})?/, "($1) $2-$3");
                 }
                 return number;

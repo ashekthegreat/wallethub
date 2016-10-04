@@ -1,8 +1,6 @@
-
-
 (function () {
     angular.module("app")
-        .config(['$provide', function($provide) {
+        .config(['$provide', function ($provide) {
             $provide.factory("CommonService", CommonService);
         }]);
 
