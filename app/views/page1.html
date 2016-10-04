@@ -49,4 +49,36 @@
         </div>
     </div>
 
+    <!-- Solution to Q6 -->
+    <div class="well">
+        <h3>Q7. Sum and distribution</h3>
+        <p>Sum 3 inputs to 4th field and distribute 4th to 3 input fields</p>
+        <div class="row">
+            <div class="col-xs-12 col-md-3">
+                <div class="form-group">
+                    <label for="input1">Input #1</label>
+                    <input type="number" class="form-control" id="input1" ng-model="inputValues.input1" ng-change="sumInputs()">
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-3">
+                <div class="form-group">
+                    <label for="input2">Input #2</label>
+                    <input type="number" class="form-control" id="input2" ng-model="inputValues.input2" ng-change="sumInputs()">
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-3">
+                <div class="form-group">
+                    <label for="input3">Input #3</label>
+                    <input type="number" class="form-control" id="input3" ng-model="inputValues.input3" ng-change="sumInputs()">
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-3">
+                <div class="form-group">
+                    <label for="input4">Sum</label>
+                    <input type="number" class="form-control" id="input4" ng-model="inputValues.sum">
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
